@@ -5,7 +5,14 @@ module.exports = {
   prompts: {
     name: {
       type: "string",
-      message: "Your name please",
+      message: "Project name (internal usage for dev)",
+      validate: (val) => val && val.length > 0,
+    },
+
+    productName: {
+      type: "string",
+      message: "Project product name",
+      default: "OpenJDL CLI generate example",
       validate: (val) => val && val.length > 0,
       transformer: escape,
     },
